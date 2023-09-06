@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 11:14:52 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/06 08:30:15 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/06 10:21:54 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -34,7 +34,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 		arr[i] = min + i;
 		i++;
 	}
-	return (max - min);
+	return (i);
 }
 /*
 #include <stdio.h>
