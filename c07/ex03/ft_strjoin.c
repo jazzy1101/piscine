@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:45:30 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/06 08:16:22 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/06 08:31:46 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -57,9 +57,9 @@ int	whole_length(char **strs, char *sep, int size)
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*str;
-	int	i;
-	int	j;
-	int	whole_size;
+	int		i;
+	int		j;
+	int		whole_size;
 
 	whole_size = whole_length(strs, sep, size);
 	str = (char *)malloc((whole_size + 1) * sizeof(char));

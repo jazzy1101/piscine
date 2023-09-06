@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:04:22 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/04 11:13:16 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/06 08:33:42 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -20,10 +20,11 @@ int	ft_strlen(char *src)
 		i++;
 	return (i);
 }
+
 char	*ft_strdup(char *src)
 {
 	char	*res;
-	int	i;
+	int		i;
 
 	res = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (!res)
@@ -35,7 +36,7 @@ char	*ft_strdup(char *src)
 		i++;
 	}
 	res[i] = '\0';
-	return	(res);
+	return (res);
 }
 /*
 #include <stdio.h>
