@@ -6,66 +6,45 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 18:19:45 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/05 17:53:32 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/06 10:00:53 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-int	ft_strcmp(char *a, char *b)
+int	ft_strcmp(char *s, char *c)
 {
 	int	i;
-	
+
 	i = 0;
-	while ((a[i] != '\0' && b[i] != '\0') && (a[i] == b[i]))
-	{
+	while (s[i] != '\0' && c[i] != '\0' && s[i] == c[i])
 		i++;
-	} 
-	return (a[i] - b[i]);
+	return (s[i] - c[i]);
 }
 
-void	print_arg(int n, char **str)
+void	swap_argv(char **s, char **c)
 {
-	int     i;
-        int     j;
+	char	*buffer;
+
+	buffer = *s;
+	*s = *c;
+	*c = buffer;
+}
+
+void	print_argv(char **argv, int argc)
+{
+	int	i;
+	int	y;
 
 	i = 1;
-	while (i < n)
+	while (i < argc)
 	{
-		j = 0;
-		while (str[i][j] != '\0')
+		y = 0;
+		while (argv[i][y])
 		{
-			write(1, &str[i][j], 1);
-			j++;
+			write(1, &argv[i][y], 1);
+			y++;
 		}
 		write(1, "\n", 1);
-		i++;
-	}
-}
-
-void	bubble(char *a)
-{
-	int	length_a;
-	int	i;
-	int	j;
-	char	buffer;
-
-	length_a = 0;
-	while (*a)
-		length_a++;
-	i = 0;
-	while (a[i] != '\0' && (i < length_a - 1))
-	{
-		j = 0;
-		while (j < length_a - i - 1)
-		{
-			if (ft_strcmp(*a[j], *a[j + 1]) < 0)
-			{
-				buffer = a[j];
-				a[j]  = a[j + 1];
-				a[j + 1] = buffer;
-			}
-			j++;
-		}
 		i++;
 	}
 }
@@ -73,15 +52,20 @@ void	bubble(char *a)
 int	main(int argc, char **argv)
 {
 	int	i;
+	int	last_argv;
 
-	i = 1;
-	while ()
-	{	
-		bubble(argv[i]);
-		i++;
+	last_argv = argc - 1;
+	while (0 < last_argv - 1)
+	{
+		i = 1;
+		while (i < argc - 1)
+		{
+			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
+				swap_argv(&argv[i], &argv[i + 1]);
+			i++;
 		}
-		num--;
+		last_argv--;
 	}
-	print_arg(argc, argv);
+	print_argv(argv, argc);
 	return (0);
 }

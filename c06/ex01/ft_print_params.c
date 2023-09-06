@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 17:42:23 by dabae             #+#    #+#             */
-/*   Updated: 2023/08/30 18:48:34 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/06 10:01:48 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -33,5 +33,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
-

@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 18:06:07 by dabae             #+#    #+#             */
-/*   Updated: 2023/08/30 18:18:49 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/06 10:02:21 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -19,10 +19,10 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		i = 1;
-		while(i < argc)
+		while (i < argc)
 		{
 			j = 0;
-			while(argv[argc - i][j] != '\0')
+			while (argv[argc - i][j] != '\0')
 			{
 				write(1, &argv[argc - i][j], 1);
 				j++;
@@ -33,4 +33,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
