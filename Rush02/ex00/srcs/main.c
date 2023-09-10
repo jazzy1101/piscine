@@ -6,21 +6,30 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:32:52 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/09 15:51:50 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/10 16:23:56 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int argc, char **argv)
+#include "ft_rush.h"
+
+int		main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		//Convert argv[1][i] into written letters ( 
+		if (!(ft_error(argc, argv[1])))
+			return (0);
+		ft_engine("numbers.dict", argv[1]);
 	}
 	else if (argc == 3)
 	{
-		//Add new ref in the dict
+		if (!(ft_error(argc, argv[2])))
+			return (0);
+		ft_engine(argv[1], argv[2]);
 	}
-	else if (argv[1] < 0)
-		write(1, "ERROR!", 6);
-	return (0);
+	if (argc != 2 && argc != 3)
+	{
+		ft_puterror("ERROR!\n");
+		return (0);
+	}
 }
+
