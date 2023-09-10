@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:45:30 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/06 08:31:46 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/10 11:44:55 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -28,7 +28,7 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = 0;
 	len = ft_strlen(dest);
-	while (src[i])
+	while (src[i] != '\0')
 	{
 		dest[len + i] = src[i];
 		i++;
@@ -58,7 +58,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*str;
 	int		i;
-	int		j;
 	int		whole_size;
 
 	whole_size = whole_length(strs, sep, size);
@@ -82,6 +81,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (str);
 }
 /*
+#include <stdio.h>
+
 int	main(int argc, char **argv)
 {
 	printf("%s\n", ft_strjoin(argc, argv, "--"));

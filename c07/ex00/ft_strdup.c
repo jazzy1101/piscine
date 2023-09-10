@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 16:04:22 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/06 08:33:42 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/10 11:08:45 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -38,8 +38,7 @@ char	*ft_strdup(char *src)
 	res[i] = '\0';
 	return (res);
 }
-/*
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main()
 {
@@ -47,5 +46,4 @@ int	main()
 
 	printf("%s\n", ft_strdup(s));
 	return (0);
-}
-*/
+}*/

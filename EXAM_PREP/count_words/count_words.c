@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   count_words.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 16:45:22 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/10 10:42:45 by dabae            ###   ########.fr       */
+/*   Created: 2023/09/09 09:44:12 by dabae             #+#    #+#             */
+/*   Updated: 2023/09/09 10:20:10 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int	main(int argc, char **argv)
+int	count_words(char *str)
 {
 	int	i;
+	int 	words;
 
 	i = 0;
-	if (argc >= 0)
+	words = 0;
+	while (str[i] != '\0')
 	{
-		while (argv[0][i])
-		{
-			write(1, &argv[0][i], 1);
+		while (str[i] == ' ')
 			i++;
-		}
-		write(1, "\n", 1);
+		if (str[i] != '\0')
+			words++;
+		while (str[i] != ' ' && str[i] != '\0')
+			i++;
 	}
+	return (words);
+}
+/*
+#include <stdio.h>
+
+int	main()
+{
+	char	s[] = "    ter    wer?";
+	printf("%d", count_words(s));
 	return (0);
 }
+*/
