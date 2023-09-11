@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:27:40 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/10 16:39:45 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/10 19:05:29 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,13 @@ char	**ft_allocate(char *arg)
 	i = 0;
 	arr_len = ft_strlen(arg);
 	first_slot = ft_module(arg);
-	if (!(arr = (char **)malloc((arr_len / 3 + first_slot) * sizeof(char *))))
+	arr = (char **)malloc((arr_len / 3 + first_slot) * sizeof(char *));
+	if (!(arr))
 		ft_puterror("Allocation Memory Error");
 	while (i < (arr_len / 3) + first_slot)
 	{
-		if (!(arr[i] = (char *)malloc((3 + 1) * sizeof(char))))
+		arr[i] = (char *)malloc((3 + 1) * sizeof(char));
+		if (!(arr[i]))
 		{
 			ft_puterror("Allocation Memory Error");
 			return (0);

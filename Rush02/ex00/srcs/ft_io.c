@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 17:29:17 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/10 17:29:21 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/10 19:05:59 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,39 +44,24 @@ int		ft_counter_rows(char *buf)
 	return (rows);
 }
 
-char *ft_rm_space(char *str)
+char    *ft_rm_space(char *str)
 {
-    int i = 0;
-    int j = 0;
-    int len = ft_strlen(str);
-    char *result = (char *)malloc((len + 1) * sizeof(char));
+        char *result = (char *)malloc(ft_strlen(str) + 1);
+        int     i;
+        int     j;
 
-    while (i < len)
-    {
-
-        if ((str[i] >= '0' && str[i] <= '9') && str[i + 1] == ' ')
+        i = 0;
+        while (str[i])
         {
-            result[j] = str[i];
-            j++;
-            while (str[i + 1] == ' ')
+                j = 0;
+                if ((str[i] >= '0' && str[i] <= '9') && str[i + 1] == ' ')
+                        result[j++] = str[i];
+                else if (str[i] != ' ' || (i > 0 && str[i - 1] != ' '))
+                        result[j++] = str[i];
                 i++;
         }
-        else if (str[i] == ' ')
-        {
-            while (str[i + 1] == ' ')
-                i++;
-        }
-        else
-        {
-            result[j] = str[i];
-            j++;
-        }
-
-        i++;
-    }
-
-    result[j] = '\0';
-    return result;
+        result[j] = '\0';
+        return result;
 }
 
 char	**ft_alloc_array(char *buf)

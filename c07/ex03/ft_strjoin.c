@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:45:30 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/10 11:44:55 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/10 17:23:12 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -85,7 +85,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 int	main(int argc, char **argv)
 {
-	printf("%s\n", ft_strjoin(argc, argv, "--"));
+	printf("%s\n", ft_strjoin(argc, argv, "-"));
 	return (0);
 }
 */
