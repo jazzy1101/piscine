@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 16:31:31 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/12 12:27:07 by dabae            ###   ########.fr       */
+/*   Created: 2023/09/11 18:46:40 by dabae             #+#    #+#             */
+/*   Updated: 2023/09/12 12:25:31 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-void	ft_putchar(char c);
-void	ft_swap(int *a, int *b);
-void	ft_putstr(char *str);
-int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
+# define ABS(Value) Value*((Value>0) - (Value<0);
+
+#endif

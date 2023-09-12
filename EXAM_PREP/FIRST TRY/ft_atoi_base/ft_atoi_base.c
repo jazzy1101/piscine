@@ -6,20 +6,17 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:13:02 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/11 16:15:29 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/12 18:20:18 by dabae            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_to_lowercase(char *str)
-{
-	int	i;
-	
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		i++;
-	}
+char	ft_to_lowercase(char c)
+
+	char	s;
+
+	s = c;
+	if (c >= 'A' && c <= 'Z')
+		s += 32;
+	return (s);
 }
 
 int	ft_convert(char s)
@@ -31,6 +28,7 @@ int	ft_convert(char s)
 	return (0);
 }
 
+/* c04 version
 int	ft_double_base(char *base)
 {
 	int	i;
@@ -56,13 +54,16 @@ int	ft_double_base(char *base)
 	}
 	return (1);
 }
-
-int	ft_atoi(const char *str, int str_base)
+*/
+int	ft_atoi_base(const char *str, int str_base)
 {
 	int	i;
 	int	sign;
 	int	res;
+	
+	char	base[17];
 
+	base = "0123456789abcdef";
 	i = 0;
 	sign = 1;
 	res = 0;
@@ -72,15 +73,10 @@ int	ft_atoi(const char *str, int str_base)
 	if (str[i] == '-')
 		sign = -1;
 	i++;
-	while (str[i] >= base[0] && str[i] <= base[str_base - 1])
+	while (ft_to_lowercase(str[i]) >= base[0] && ft_to_lowercase(str[i]) <= base[str_base - 1])
 	{
-		ft_convert(str[i])
+		res = res * str_base + ft_convert(str[i]) * sign;
 		i++;
 	}			
-	return (res * sign);
+	return (res);
 }
-
-
-int	ft_atoi_base(const char *str, int str_base)
-{
-	char	base[17] = "0123456789abcdef";
