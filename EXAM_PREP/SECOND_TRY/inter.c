@@ -6,7 +6,7 @@
 /*   By: dabae <dabae@student.42perpignan.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 15:56:31 by dabae             #+#    #+#             */
-/*   Updated: 2023/09/13 17:07:23 by dabae            ###   ########.fr       */
+/*   Updated: 2023/09/13 19:46:54 by darambae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -20,6 +20,7 @@ int	self_check(char *s, char c, int	pos)
 	{
 		if (s[i] == c)
 			return (1);
+		i++;
 	}
 	return (0);
 }
@@ -33,6 +34,7 @@ int	check_other(char *s, char c)
 	{
 		if (s[i] == c)
 			return (1);
+		i++;
 	}
 	return (0);
 }
@@ -47,12 +49,8 @@ int	main(int ac, char **av)
 		while (av[1][i])
 		{
 	       		if (!self_check(av[1], av[1][i], i) && check_other(av[2], av[1][i]))
-			{
 				write(1, &av[1][i], 1);
-				i++;
-			}
-			else
-				break;
+			i++;
 		}
 	}
 	write(1, "\n", 1);
